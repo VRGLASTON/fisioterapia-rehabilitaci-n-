@@ -1,8 +1,8 @@
 :root {
-    --primary-blue: #243b6b;      /* Azul oscuro principal */
-    --secondary-blue: #5b7da6;    /* Azul intermedio */
-    --bg-gradient-start: #e4eef7; /* Azul muy claro para fondos */
-    --bg-gradient-end: #ffffff;   /* Blanco */
+    --primary-blue: #243b6b;
+    --secondary-blue: #5b7da6;
+    --bg-gradient-start: #e4eef7;
+    --bg-gradient-end: #ffffff;
     --color-de-agende: #120fc4;  
 }
 
@@ -10,7 +10,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif; /* Tipografía idéntica a la imagen */
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -34,6 +34,7 @@ body {
 
 .container {
     display: flex;
+    width: 100%;
     background: linear-gradient(135deg, var(--bg-gradient-end) 40%, var(--bg-gradient-start) 100%);
 }
 
@@ -47,34 +48,19 @@ body {
 .header {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-weight: 600;
-    font-size: 0.9rem;
     margin-bottom: 30px;
 }
 
 .logo-icon {
     display: inline-block;
-    background-color: transparent; /* Quitamos el fondo azul */
-    width: auto;
-    height: auto;
+    background-color: transparent;
 }
 
 .logo-icon img {
-    max-width: 350px; /* Ajusta este valor según el ancho que desees en PC */
+    max-width: 250px; /* Reducido un poco para mejor estética en escritorio */
     height: auto;
     display: block;
     object-fit: contain;
-}
-
-.logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-border-radius: 50%;
-flex-wrap: wrap;
-
 }
 
 .main-title {
@@ -96,7 +82,7 @@ flex-wrap: wrap;
     margin-bottom: 25px;
     border-radius: 0 5px 5px 0;
     align-self: flex-start;
-    margin-left: -40px; /* Para que toque el borde izquierdo como en el diseño */
+    margin-left: -40px;
     padding-left: 40px;
 }
 
@@ -108,16 +94,18 @@ flex-wrap: wrap;
 }
 
 .doctor-icon {
-    
-    border-radius: 50%;
-    width: 50px;
+    width: 60px;
     height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
-    img{
-        border-radius: 50%;
-    }
+}
+
+.doctor-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .doctor-details h2 {
@@ -140,10 +128,10 @@ flex-wrap: wrap;
     color: var(--primary-blue);
     background: white;
     display: inline-block;
-    padding: 5px 20px;
+    padding: 8px 25px;
     font-size: 1.1rem;
     font-weight: 700;
-    box-shadow: 0 2px 10px rgba(8, 4, 209, 0.815);
+    box-shadow: 0 2px 10px rgba(8, 4, 209, 0.2); /* Sombra suavizada para mayor elegancia */
     margin-bottom: 15px;
     border-radius: 10px;
 }
@@ -163,64 +151,24 @@ flex-wrap: wrap;
     margin-right: 5px;
 }
 
-.qr-container {
+.whatsapp-container {
     margin-top: 35px;
 }
 
-.qr-container p {
+.whatsapp-container p {
     font-size: 0.9rem;
     color: var(--secondary-blue);
     font-weight: 600;
     margin-bottom: 10px;
 }
 
-#qrcode {
-    background: white;
-    padding: 10px;
-    border-radius: 10px;
-    display: inline-block;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.right-content {
-    flex: 0.8;
-    position: relative;
-    display: flex;
-
-}
-
-
-.footer {
-    background-color: #3b5a8e;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-}
-
-.contact-info{
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    font-weight: 600;
-    font-size: 1.5rem;
-    a{
-        text-decoration: none;
-        color: var(--bg-gradient-end);
-    }
-}
-
-
-
-
 .whatsapp-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-top: 15px;
+    margin-top: 10px;
     gap: 10px;
-    background-color: #25D366; /* Color oficial de WhatsApp */
+    background-color: #25D366;
     color: white;
     text-decoration: none;
     padding: 12px 25px;
@@ -236,23 +184,24 @@ flex-wrap: wrap;
     box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
 }
 
-/* Diseño Responsivo para móviles */
-/* @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-    .right-content {
-        min-height: 350px;
-    }
-    .treatments-list {
-        grid-template-columns: 1fr;
-    }
-    .footer {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
-} */
+.right-content {
+    flex: 0.8;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.right-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =========================================
+   DISEÑO RESPONSIVO (Móviles y Tablets)
+   ========================================= */
 
 @media (max-width: 992px) {
     .main-title { font-size: 2.2rem; }
@@ -262,45 +211,97 @@ flex-wrap: wrap;
 
 @media (max-width: 768px) {
     body { padding: 10px; }
-    .container { flex-direction: column; }
-    .left-content { padding: 30px 20px; align-items: center; text-align: center; }
     
-    .header { justify-content: center; margin-bottom: 20px; }
-    .logo-icon img { max-width: 130px; }
+    .container { 
+        flex-direction: column; 
+    }
     
-    .main-title { font-size: 2rem; text-align: center; }
+    .left-content { 
+        padding: 30px 20px; 
+        align-items: center; 
+        text-align: center; 
+    }
+    
+    .header { 
+        justify-content: center; 
+        width: 100%;
+        margin-bottom: 20px; 
+    }
+    
+    .logo-icon {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .logo-icon img { max-width: 200px; }
+    
+    .main-title { 
+        font-size: 2.2rem; 
+        text-align: center; 
+        width: 100%;
+    }
     
     .cta-banner {
-        margin-left: 0;
-        margin-bottom: 25px;
+        margin: 0 auto 25px auto; /* Centrado absoluto */
         border-radius: 8px;
-        padding: 12px;
+        padding: 15px;
         width: 100%;
         max-width: 350px;
         text-align: center;
     }
     
-    .doctor-info { flex-direction: column; text-align: center; gap: 10px; }
+    .doctor-info { 
+        flex-direction: column; 
+        text-align: center; 
+        gap: 12px;
+        justify-content: center;
+    }
     
-    .treatments-section { width: 100%; display: flex; flex-direction: column; align-items: center; }
-    .treatments-list { grid-template-columns: 1fr; gap: 12px; width: 100%; max-width: 280px; text-align: left; }
+    .treatments-section { 
+        width: 100%; 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+    }
     
-    .whatsapp-container { text-align: center; margin-top: 30px; width: 100%; }
-    .whatsapp-btn { width: 100%; max-width: 350px; }
+    .treatments-list { 
+        display: flex;
+        flex-direction: column;
+        gap: 12px; 
+        width: 100%; 
+        max-width: 320px; 
+        text-align: left; /* Alinea los checks a la izquierda pero el bloque está centrado */
+        margin: 0 auto;
+    }
     
-    .right-content { min-height: 350px; width: 100%; }
+    .whatsapp-container { 
+        text-align: center; 
+        margin-top: 30px; 
+        width: 100%; 
+    }
     
-    .footer { flex-direction: column; gap: 20px; text-align: center; padding: 25px 20px; }
-    .contact-info, .address-info { justify-content: center; flex-direction: column; gap: 5px; }
-    .address-info { text-align: center; }
+    .whatsapp-btn { 
+        width: 100%; 
+        max-width: 350px; 
+        margin: 0 auto;
+    }
+    
+    .right-content { 
+        width: 100%; 
+        padding: 0;
+        display: block;
+    }
+    
+    .right-content img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
 }
 
-/* Teléfonos muy pequeños (iPhone SE, etc.) */
 @media (max-width: 480px) {
-    .main-title { font-size: 1.7rem; }
-    .cta-banner { font-size: 1.3rem; }
+    .main-title { font-size: 1.8rem; }
+    .cta-banner { font-size: 1.4rem; padding: 12px; }
     .doctor-details h2 { font-size: 1.1rem; }
-    .logo-icon img { max-width: 110px; }
-    .right-content { min-height: 280px; }
-    .right-content::after { width: 150px; height: 150px; } /* Ajusta el brillo rojo para que no se salga */
+    .logo-icon img { max-width: 160px; }
 }
